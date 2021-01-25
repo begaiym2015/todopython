@@ -23,14 +23,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", homepage, name="home"),
     path("test", test, name="test"),
-    path("test2/", second),
     path("add-todo/", add_todo, name="add-todo"),
     path("delete-todo/<id>/", delete_todo, name="delete-todo"),
     path("mark-todo/<id>/", mark_todo, name="mark-todo"),
     path("unmark-todo/<id>/", unmark_todo, name="unmark-todo"),
-    path("homework", homework, name="homework"),
-    path("homework2", homework2, name="homework2"),
-    path("books", books, name="books"),
+    path("close-todo/<id>/", close_todo, name="close-todo"),
+
 
     # path("test3/", third),
 ]   + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \

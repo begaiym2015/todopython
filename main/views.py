@@ -32,19 +32,8 @@ def unmark_todo(request, id):
     todo.save()
     return redirect(test)
 
-def second(request):
-    return HttpResponse("test 2 page")
-
-
-def homework(request):
-    return render(request, "homework31.html")
-
-def homework2(request):
-    return render(request, "homework312.html")
-
-def books(request):
-    return render(request, "books.html")
-
-
-# def third(request):
-#     return HttpResponse("This is page test3.")
+def close_todo(request, id):
+    todo = ToDo.objects.get(id=id)
+    todo.is_closed = not todo.is_closed
+    todo.save()
+    return redirect(test)
